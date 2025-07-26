@@ -44,6 +44,7 @@ pub struct Issuer {
     pub ssl_trusted_certificate: ngx_str_t,
     pub ssl_verify: ngx_flag_t,
     pub state_path: *mut ngx_path_t,
+    pub accept_tos: Option<bool>,
     // Generated fields
     // ngx_ssl_t stores a pointer to itself in SSL_CTX ex_data.
     pub ssl: Box<NgxSsl, Pool>,
@@ -87,6 +88,7 @@ impl Issuer {
             ssl_trusted_certificate: ngx_str_t::empty(),
             ssl_verify: NGX_CONF_UNSET_FLAG,
             state_path: ptr::null_mut(),
+            accept_tos: None,
             ssl,
             pkey: None,
             orders: RbTreeMap::try_new_in(alloc)?,

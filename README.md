@@ -12,8 +12,7 @@ certificate management (ACMEv2) protocol.
 The module implements following specifications:
 
  * [RFC8555] (Automatic Certificate Management Environment) with limitations:
-     - Only HTTP-01 challenge type is supported
-     - External account binding is not supported
+     - Only HTTP-01 and TLS-ALPN-01 challenge types are supported
  * [RFC8737] (ACME TLS Application-Layer Protocol Negotiation (ALPN) Challenge Extension)
 
 [NGINX]: https://nginx.org/
